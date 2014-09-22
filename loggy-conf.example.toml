@@ -1,0 +1,6 @@
+username = "loggyloggy"
+password = "loggyloggy"
+server = "irc.freenode.net:6667"
+channel = "#loggyloggy"
+push = false
+
