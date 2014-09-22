@@ -8,7 +8,6 @@ import "os/exec"
 import s "strings"
 import "math/rand"
 import "github.com/BurntSushi/toml"
-import "fmt"
 
 type Config struct {
   Username string
