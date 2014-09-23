@@ -27,8 +27,6 @@ import "time"
 import "os"
 import "io/ioutil"
 import "os/exec"
-import s "strings"
-import "math/rand"
 import "github.com/BurntSushi/toml"
 
 type Config struct {
@@ -121,21 +119,6 @@ func main() {
       if config.Push {
         push()
       }
-
-      // reply to things here
-      if s.Contains(e.Message(), "@" + config.Username) {
-        con.Privmsg(config.Channel, "Don't talk to me. I am a robot.")
-      } else if s.Contains(e.Message(), config.Username) {
-        con.Privmsg(config.Channel, "*cough*")
-      }
-    }
-  })
-
-  // listen for incoming peoples
-  con.AddCallback("JOIN", func(e *irc.Event) {
-    // perhaps greet them
-    if rand.Int31n(5) == 0 {
-      con.Privmsg(config.Channel, "Hello " + e.Nick + "!")
     }
   })
 
